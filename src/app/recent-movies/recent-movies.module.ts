@@ -6,12 +6,14 @@ import { RecentMoviesPage } from './recent-movies.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { RecentMoviesPageRoutingModule } from './recent-movies-routing.module';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
+    PipesModule,
     ExploreContainerComponentModule,
     RecentMoviesPageRoutingModule
   ],

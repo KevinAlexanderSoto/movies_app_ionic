@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesApiService } from '../services/movies-api.service';
+import { Movie } from '../interfaces/apiInterfaces';
 
 @Component({
   selector: 'app-tab1',
@@ -9,10 +10,11 @@ import { MoviesApiService } from '../services/movies-api.service';
 export class RecentMoviesPage implements OnInit {
 
   constructor(private moviesApiService: MoviesApiService) { }
+  recentMoviesArray: Movie[] = [];
 
   ngOnInit(): void {
-    this.moviesApiService.getRecentMovies().subscribe(movies => {
-      console.log(movies);
+    this.moviesApiService.getRecentMovies().subscribe(moviesResult => {
+      this.recentMoviesArray = moviesResult.results
     })
   }
 
