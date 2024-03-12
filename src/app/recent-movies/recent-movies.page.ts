@@ -11,10 +11,14 @@ export class RecentMoviesPage implements OnInit {
 
   constructor(private moviesApiService: MoviesApiService) { }
   recentMoviesArray: Movie[] = [];
+  popularMoviesArray: Movie[] = [];
 
   ngOnInit(): void {
     this.moviesApiService.getRecentMovies().subscribe(moviesResult => {
       this.recentMoviesArray = moviesResult.results
+    })
+    this.moviesApiService.getPoularMovies().subscribe(moviesResult => {
+      this.popularMoviesArray = moviesResult.results
     })
   }
 
