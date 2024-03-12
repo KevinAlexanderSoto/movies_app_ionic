@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { RecentMoviesPageRoutingModule } from './recent-movies-routing.module';
 import { PipesModule } from '../pipes/pipes.module';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
@@ -14,8 +15,8 @@ import { PipesModule } from '../pipes/pipes.module';
     CommonModule,
     FormsModule,
     PipesModule,
-    ExploreContainerComponentModule,
-    RecentMoviesPageRoutingModule
+    RecentMoviesPageRoutingModule,
+    ComponentsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [RecentMoviesPage]

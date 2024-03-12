@@ -1,0 +1,7 @@
+<swiper-container [slidesPerView]="1.1">
+  <swiper-slide *ngFor="let movie of moviesArray">
+    <ion-card>
+      <img [src]="movie.backdrop_path | toImageUrl" />
+    </ion-card>
+  </swiper-slide>
+</swiper-container>
