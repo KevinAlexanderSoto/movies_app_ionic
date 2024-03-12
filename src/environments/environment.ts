@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  ROOTMOVIEPATH: 'https://api.themoviedb.org/3/'
+  ROOTMOVIEPATH: 'https://api.themoviedb.org/3/',
+  APIKEY: 'fa065d8318cff0090a97384d49a8ee30',
+  ROOTIMAGEPATH: 'https://image.tmdb.org/t/p/'
 };
 
 /*

@@ -14,7 +14,13 @@ export class MoviesApiService {
 
   }
 
+  private executeMovieQuery<T>(query: string): Observable<T> {
+    query = environment.ROOTMOVIEPATH + query;
+    query = query + `?api_key=${environment.APIKEY}&primary_release_date.gte=2024-03-08&primary_release_date.lte=2024-03-08`
+    return this.httpCliente.get<T>(query)
+  }
+
   getRecentMovies(): Observable<RootMovieResult> {
-    return this.httpCliente.get<RootMovieResult>(environment.ROOTMOVIEPATH + "discover/movie?api_key=fa065d8318cff0090a97384d49a8ee30&primary_release_date.gte=2024-03-08&primary_release_date.lte=2024-03-08")
+    return this.executeMovieQuery<RootMovieResult>("discover/movie")
   }
 }
