@@ -4,12 +4,13 @@ import { CommonModule } from '@angular/common';
 import { MoviesImageSwiperComponent } from './movies-image-swiper/movies-image-swiper.component';
 import { IonicModule } from '@ionic/angular';
 import { PipesModule } from '../pipes/pipes.module';
+import { MoviesImagex2PosterSwiperComponent } from './movies-imagex2-poster-swiper/movies-imagex2-poster-swiper.component';
 
 
 
 @NgModule({
-  declarations: [MoviesImageSwiperComponent, MoviesImagePosterSwiperComponent],
-  exports: [MoviesImageSwiperComponent, MoviesImagePosterSwiperComponent],
+  declarations: [MoviesImageSwiperComponent, MoviesImagePosterSwiperComponent, MoviesImagex2PosterSwiperComponent],
+  exports: [MoviesImageSwiperComponent, MoviesImagePosterSwiperComponent, MoviesImagex2PosterSwiperComponent],
   imports: [
     CommonModule,
     IonicModule,

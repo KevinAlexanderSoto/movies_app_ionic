@@ -1,0 +1,17 @@
+<swiper-container [slidesPerView]="3.2">
+  <swiper-slide *ngFor="let newArray of moviesArray | arrayToArraydoble">
+    <ion-row>
+      <ion-col size="12" *ngFor="let movie of newArray">
+        <ion-card>
+          <img [src]="movie.poster_path | toImageUrl" />
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </swiper-slide>
+
+  <swiper-slide class="my-more-slide">
+    <ion-button fill="outline" class="more-button" (click)="onLoadMore()">
+      <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+    </ion-button>
+  </swiper-slide>
+</swiper-container>

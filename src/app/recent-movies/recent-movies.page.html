@@ -5,4 +5,9 @@
   <h2>Popular Titles</h2>
   <app-movies-image-poster-swiper [moviesArray]="popularMoviesArray">
   </app-movies-image-poster-swiper>
+  <app-movies-imagex2-poster-swiper
+    [moviesArray]="popularMoviesArray"
+    (onLoadMoreClick)="onLoadMorePoularMovies()"
+  >
+  </app-movies-imagex2-poster-swiper>
 </ion-content>

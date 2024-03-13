@@ -17,8 +17,16 @@ export class RecentMoviesPage implements OnInit {
     this.moviesApiService.getRecentMovies().subscribe(moviesResult => {
       this.recentMoviesArray = moviesResult.results
     })
+    this.getPopularMovies();
+  }
+
+  onLoadMorePoularMovies(): void {
+    this.getPopularMovies()
+  }
+
+  private getPopularMovies(): void {
     this.moviesApiService.getPoularMovies().subscribe(moviesResult => {
-      this.popularMoviesArray = moviesResult.results
+      this.popularMoviesArray = this.popularMoviesArray.concat(...moviesResult.results)
     })
   }
 

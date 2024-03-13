@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class MoviesApiService {
-
+  private popularPage = 0;
   constructor(
     private httpCliente: HttpClient
   ) {
@@ -19,7 +19,8 @@ export class MoviesApiService {
   }
 
   getPoularMovies(): Observable<RootMovieResult> {
-    return new MovieQueryBuilder(this.httpCliente).addQuery("discover/movie?sort_by=popularity.desc").addApiKey().addDateFilter().build();
+    this.popularPage++
+    return new MovieQueryBuilder(this.httpCliente).addQuery(`discover/movie?sort_by=popularity.desc&page=${this.popularPage}`).addApiKey().addDateFilter().build();
   }
 }
 
