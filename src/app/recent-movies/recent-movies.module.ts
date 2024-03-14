@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { RecentMoviesPageRoutingModule } from './recent-movies-routing.module';
 import { PipesModule } from '../pipes/pipes.module';
 import { ComponentsModule } from '../components/components.module';
+import { MovieDetailPageModule } from '../movie-detail/movie-detail.module';
 
 @NgModule({
   imports: [
@@ -16,9 +17,10 @@ import { ComponentsModule } from '../components/components.module';
     FormsModule,
     PipesModule,
     RecentMoviesPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    MovieDetailPageModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [RecentMoviesPage]
+  declarations: [RecentMoviesPage,]
 })
 export class RecentMoviesPageModule { }

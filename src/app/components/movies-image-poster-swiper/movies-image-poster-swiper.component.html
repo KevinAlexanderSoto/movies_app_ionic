@@ -1,6 +1,6 @@
 <swiper-container [slidesPerView]="3.2">
   <swiper-slide *ngFor="let movie of moviesArray">
-    <ion-card class="posterImage">
+    <ion-card class="posterImage" (click)="onMovieDetail(movie.id)">
       <img [src]="movie.poster_path | toImageUrl" />
     </ion-card>
   </swiper-slide>

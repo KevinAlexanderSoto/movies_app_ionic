@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Movie } from 'src/app/interfaces/apiInterfaces';
 
 @Component({
@@ -9,9 +9,14 @@ import { Movie } from 'src/app/interfaces/apiInterfaces';
 export class MoviesImagePosterSwiperComponent implements OnInit {
 
   @Input() moviesArray: Movie[] = [];
+  @Output() onMoviewDetailClick = new EventEmitter<number>();
   constructor() {
   }
 
   ngOnInit() { }
+
+  onMovieDetail(event: number): void {
+    this.onMoviewDetailClick.emit(event);
+  }
 
 }

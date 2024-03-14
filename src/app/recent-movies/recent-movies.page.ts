@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesApiService } from '../services/movies-api.service';
 import { Movie } from '../interfaces/apiInterfaces';
+import { Router } from '@angular/router';
+import { MOVIE_DETAIL_NAVIGATION_ROUTE } from '../navigation/navigation';
 
 @Component({
   selector: 'app-tab1',
@@ -9,7 +11,7 @@ import { Movie } from '../interfaces/apiInterfaces';
 })
 export class RecentMoviesPage implements OnInit {
 
-  constructor(private moviesApiService: MoviesApiService) { }
+  constructor(private moviesApiService: MoviesApiService, private route: Router) { }
   recentMoviesArray: Movie[] = [];
   popularMoviesArray: Movie[] = [];
 
@@ -23,7 +25,9 @@ export class RecentMoviesPage implements OnInit {
   onLoadMorePoularMovies(): void {
     this.getPopularMovies()
   }
-
+  onMovieDetails(movieId: number): void {
+    this.route.navigateByUrl(MOVIE_DETAIL_NAVIGATION_ROUTE + `/${movieId}`)
+  }
   private getPopularMovies(): void {
     this.moviesApiService.getPoularMovies().subscribe(moviesResult => {
       this.popularMoviesArray = this.popularMoviesArray.concat(...moviesResult.results)

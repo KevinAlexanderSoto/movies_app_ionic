@@ -12,6 +12,8 @@ export class MoviesImagex2PosterSwiperComponent implements OnInit {
 
   @Output() onLoadMoreClick = new EventEmitter();
 
+  @Output() onMoviewDetailClick = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() { }
@@ -19,5 +21,7 @@ export class MoviesImagex2PosterSwiperComponent implements OnInit {
   onLoadMore(): void {
     this.onLoadMoreClick.emit();
   }
-
+  onMovieDetail(movieId: number): void {
+    this.onMoviewDetailClick.emit(movieId);
+  }
 }

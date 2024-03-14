@@ -2,7 +2,7 @@
   <swiper-slide *ngFor="let newArray of moviesArray | arrayToArraydoble">
     <ion-row>
       <ion-col size="12" *ngFor="let movie of newArray">
-        <ion-card>
+        <ion-card (click)="onMovieDetail(movie.id)">
           <img [src]="movie.poster_path | toImageUrl" />
         </ion-card>
       </ion-col>

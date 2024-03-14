@@ -1,13 +1,23 @@
 <ion-content [fullscreen]="true">
   <h2>Recent Titles</h2>
-  <app-movies-image-swiper [moviesArray]="recentMoviesArray">
+  <ion-button href="tabs/tab1/detail" expand="block" fill="clear" shape="round">
+    Click me
+  </ion-button>
+  <app-movies-image-swiper
+    [moviesArray]="recentMoviesArray"
+    (onMoviewDetailClick)="onMovieDetails($event)"
+  >
   </app-movies-image-swiper>
   <h2>Popular Titles</h2>
-  <app-movies-image-poster-swiper [moviesArray]="popularMoviesArray">
+  <app-movies-image-poster-swiper
+    [moviesArray]="popularMoviesArray"
+    (onMoviewDetailClick)="onMovieDetails($event)"
+  >
   </app-movies-image-poster-swiper>
   <app-movies-imagex2-poster-swiper
     [moviesArray]="popularMoviesArray"
     (onLoadMoreClick)="onLoadMorePoularMovies()"
+    (onMoviewDetailClick)="onMovieDetails($event)"
   >
   </app-movies-imagex2-poster-swiper>
 </ion-content>
