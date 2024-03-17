@@ -13,7 +13,7 @@ $RECYCLE.BIN/
 log.txt
 
 # environment variables
-/.environments
+/environments
 
 /.sourcemaps
 /.versions
