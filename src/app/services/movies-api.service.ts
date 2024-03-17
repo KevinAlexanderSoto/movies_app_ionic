@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { RootMovieResult } from '../interfaces/apiInterfaces';
+import { MovieCredits, MovieDetail, RootMovieResult } from '../interfaces/apiInterfaces';
 import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,14 @@ export class MoviesApiService {
   getPoularMovies(): Observable<RootMovieResult> {
     this.popularPage++
     return new MovieQueryBuilder(this.httpCliente).addQuery(`discover/movie?sort_by=popularity.desc&page=${this.popularPage}`).addApiKey().addDateFilter().build();
+  }
+
+  getMovieDetails(moviewId: string): Observable<MovieDetail> {
+    return new MovieQueryBuilder(this.httpCliente).addQuery(`movie/${moviewId}?`).addApiKey().addDateFilter().build();
+  }
+
+  getMovieCredits(moviewId: string): Observable<MovieCredits> {
+    return new MovieQueryBuilder(this.httpCliente).addQuery(`movie/${moviewId}/credits?`).addApiKey().addDateFilter().build();
   }
 }
 
